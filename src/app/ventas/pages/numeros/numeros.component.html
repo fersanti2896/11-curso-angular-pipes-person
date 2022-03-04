@@ -1,0 +1,28 @@
+
+<div class="text-layout">
+    <h1>DecimalPipes - Porcentaje</h1>
+    <p>
+        Pipes incluidos en Angular - Usualmente en el Common Module. 
+    </p>
+</div>
+
+<div class="grid">
+    <div class="col-4">
+        <p-card header="Ventas Brutas" subheader="Del año 2021">
+            <i class="pi pi-dollar"></i>
+            {{ ventasBrutas | number:'1.3-3':'es-MX' }}
+        </p-card>
+    </div>
+    <div class="col-4">
+        <p-card header="Ventas Netas" subheader="Del año 2021">
+            {{ (ventasBrutas - 14200000) | currency:'USD':'symbol-narrow':'1.0-4'}}
+        </p-card>
+    </div>
+    <div class="col-4">
+        <p-card header="Impuesto IVA" subheader="Del año 2021">
+            {{ (ventasBrutas * tasaIVA) | currency:'USD':'symbol-narrow':'1.0-4'}}
+            a una tasa del: 
+                {{ tasaIVA | percent:'2.2-2' }}
+        </p-card>
+    </div>
+</div>
