@@ -6,6 +6,8 @@ import { Heroe } from '../interfaces/ventas.interface';
 })
 export class OrdenarPipe implements PipeTransform {
   transform(heroes: Heroe[], orderPor: string = 'sin valor'): Heroe[] {
+    /* Rompiendo referencia */
+    heroes = [...heroes];
 
     switch (orderPor) {
       case 'nombre':
@@ -16,7 +18,7 @@ export class OrdenarPipe implements PipeTransform {
 
       case 'color':
         return heroes.sort((a, b) => a.color > b.color ? 1 : -1);
-        
+
       default:
         return heroes;
     }
