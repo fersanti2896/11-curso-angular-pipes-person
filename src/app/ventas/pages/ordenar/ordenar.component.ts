@@ -9,6 +9,7 @@ import { Color, Heroe } from '../../interfaces/ventas.interface';
 })
 export class OrdenarComponent {
   enMayusculas: boolean = true;
+  
   heroes: Heroe[] = [
     {
       nombre: 'Superman',
